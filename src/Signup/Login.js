@@ -42,7 +42,7 @@ catch{
         <button type='submit' >Login</button>
         </form>
 
-       
+       <p><Link to="/Forgotpassword">Forgot Password</Link></p>
         <p>Don't have account?<Link to="/Signup">Sign up</Link></p>
   </div>
 }
