@@ -1,6 +1,8 @@
 import React, { useContext } from 'react'
 import {Link} from 'react-router-dom'
 import { AuthContext } from './Signup/AuthContextProvider'
+import ExpenseForm from './ExpenseForm'
+import ShowExpenses from './ShowExpenses'
 const Home = () => {
    const authctx= useContext(AuthContext)
   const EmailverificationHandler=async (e)=>{
@@ -17,6 +19,8 @@ alert(response.error.message)
   return <div>
       <button><Link to="/Userprofile">Complete Profile</Link></button>
       <button onClick={EmailverificationHandler}>Verify Email</button>
+      <ExpenseForm></ExpenseForm>
+      <ShowExpenses></ShowExpenses>
       
   </div>
 }

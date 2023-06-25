@@ -23,9 +23,11 @@ try
    alert(response.error.message)
 }
 catch{
-
  alert("Logged In sucessfully");
- authctx.login(response.idToken)
+ localStorage.setItem("token",response.idToken);
+ localStorage.setItem("email",emailref.current.value.replace('.',''));
+ authctx.login(localStorage.getItem('token'),localStorage.getItem('email'));
+
  history.replace("/Home")
 
  

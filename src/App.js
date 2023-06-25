@@ -11,7 +11,7 @@ import ForgotPassword from './Signup/ForgotPassword';
 
 function App() {
    const authctx=useContext(AuthContext)
-   console.log(authctx.token);
+   const login=localStorage.getItem('token')
   return (
     <div className="App">
  
@@ -20,7 +20,7 @@ function App() {
 <Route path="/Signup"><SignUp></SignUp></Route>
 <Route path="/Forgotpassword"><ForgotPassword></ForgotPassword></Route>
 {authctx.IsLoggedin && <Route path="/Userprofile"><UserProfile></UserProfile></Route>}
-{authctx.IsLoggedin && <Route path="/Home"><Home></Home></Route>}
+{login && <Route path="/Home"><Home></Home></Route>}
 
    </Switch>
   

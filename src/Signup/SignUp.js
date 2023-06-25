@@ -31,7 +31,7 @@ try
 }
 catch{
     alert("Signed up sucessfully")
-    authctx.login(response.idToken)
+    authctx.login(response.idToken,emailref.current.value.replace('.',''))
     history.replace("/Home")
 }
    }
