@@ -1,9 +1,11 @@
-import React, { useContext, useRef } from 'react'
+import React, {  useRef } from 'react'
 
 import { Link ,useHistory} from 'react-router-dom'
-import { AuthContext } from './AuthContextProvider';
+import  {Authactions} from '../Store/Authreducer'
+import { useSelector,useDispatch } from 'react-redux';
 const Login = () => {
-   const authctx=useContext(AuthContext)
+  const authctx=useSelector(state=>state)
+  const dispatch=useDispatch()
    const history=useHistory()
     const emailref=useRef();
     const passwordref=useRef();
@@ -26,9 +28,8 @@ catch{
  alert("Logged In sucessfully");
  localStorage.setItem("token",response.idToken);
  localStorage.setItem("email",emailref.current.value.replace('.',''));
- authctx.login(localStorage.getItem('token'),localStorage.getItem('email'));
-
- history.replace("/Home")
+dispatch(Authactions.loginHandler({token:localStorage.getItem('token'),email:localStorage.getItem('email')}))
+ history.push("/Home")
 
  
 }

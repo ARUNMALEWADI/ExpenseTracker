@@ -1,5 +1,4 @@
 import React, { useReducer, useState } from 'react'
-
 export const AuthContext=React.createContext({token:localStorage.getItem('token'),email:localStorage.getItem('email'),Login:false,login:(token)=>{},logout:()=>{}});
 const defaultstate={}
 function reducer(state,action)

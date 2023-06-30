@@ -1,11 +1,13 @@
-import React, { useContext,useRef} from 'react'
+import React, {useRef} from 'react'
 import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { AuthContext } from './AuthContextProvider';
+import { Authactions } from '../Store/Authreducer';
+import { useDispatch } from 'react-redux';
 
 const SignUp = () => {
     const history=useHistory()
-    const authctx=useContext(AuthContext)
+  
+    const dispatch=useDispatch();
 const emailref=useRef();
 const passwordref=useRef();
 const confirmpasswordref=useRef();
@@ -31,7 +33,8 @@ try
 }
 catch{
     alert("Signed up sucessfully")
-    authctx.login(response.idToken,emailref.current.value.replace('.',''))
+    dispatch(Authactions.loginHandler({token:response.idToken,email:emailref.current.value.replace('.','')}))
+    
     history.replace("/Home")
 }
    }
