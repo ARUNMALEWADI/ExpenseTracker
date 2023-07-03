@@ -10,9 +10,11 @@ import { Authactions } from './Store/Authreducer'
 import { ThemeAction } from './Store/Themereducer'
 import Premium from './Premium'
 import Csv from './Csv'
+import { CSVLink, CSVDownload } from "react-csv";
 const Home = () => {
    const authctx= useSelector(state=>state.auth)
    const expensectx=useSelector(state=>state.expense.amount)
+   const expense=useSelector(state=>state.expense.expenses)
    const formctx=useContext(ExpenseFormContext)
    const dispatch=useDispatch()
 const premium=useSelector(state=>state.theme.premium)
@@ -95,6 +97,16 @@ const label=".";
       <div>
       <img  className={classes.moneyimg} src={require("./assets/csv.jpg")} alt={"Carlie Anglemire"}/>
       <p>Download Data</p>
+        <CSVLink data={expense}  filename={"expenses.csv"}>
+          <button style={{position:"relative",marginLeft:"-2.8cm"}}>
+            <section style={{position:"absolute",marginLeft:"-5cm" ,height:"fit-content",marginTop:"-1cm"}}>
+              <img className={classes.moneyimg} src={require("./assets/downloads.png")} alt={"Carlie Anglemire"}/>
+            </section >
+            <section  style={{position:"absolute" ,height:"1rem",marginLeft:"1.2cm",fontSize:"large"}}>
+              Excel</section>
+            </button>
+          </CSVLink>
+         
       </div>
 
       </div>
@@ -103,7 +115,7 @@ const label=".";
 
     { formctx.ShowForm&& <ExpenseForm></ExpenseForm>}
       <ShowExpenses></ShowExpenses>
-      <Csv></Csv>
+    
       
 
   </Fragment>
