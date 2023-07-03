@@ -1,5 +1,5 @@
 import React, {  useRef } from 'react'
-
+import classes from './Login.module.css'
 import { Link ,useHistory} from 'react-router-dom'
 import  {Authactions} from '../Store/Authreducer'
 import { useSelector,useDispatch } from 'react-redux';
@@ -35,17 +35,16 @@ dispatch(Authactions.loginHandler({token:localStorage.getItem('token'),email:loc
 }
    }
   
-  return <div>
+  return <div className={classes.div}>
           <h1>Login</h1>
          <form onSubmit={LoginHandler}>
-         <label>Email:</label>
-        <input type='email' ref={emailref}></input>
+         <label>Email</label>
+        <input type='email' aria-hidden='true' ref={emailref} placeholder='Enter the mail'></input>
         <label>Password</label>
-        <input type='password' ref={passwordref}></input>
+        <input type='password' ref={passwordref} placeholder='Enter The Password'></input>
         <button type='submit' >Login</button>
         </form>
-
-       <p><Link to="/Forgotpassword">Forgot Password</Link></p>
+      <p><Link to="/Forgotpassword">Forgot Password</Link></p>
         <p>Don't have account?<Link to="/Signup">Sign up</Link></p>
   </div>
 }

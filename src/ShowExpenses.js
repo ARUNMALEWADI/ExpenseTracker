@@ -41,19 +41,28 @@ useEffect(()=>{
         "Content-Type": "application/json",
       },})
      let response=await res.json()
-    //  console.log('response',response);
-    //  let b=Object.values(response)
-    console.log("Msd");
      let c=[]
      let amount=0;
     for (const key in response) {
         c.push({id:key,id2:response[key].id,category:response[key].category,price:response[key].price,description:response[key].description ,date:response[key].date})
-        amount+=response[key].price;
+        amount+=Number(response[key].price);
     }
+
 // console.log(c);
 dispatch(Expenseactions.expenseadd(c))
 dispatch(Expenseactions.expenseamount(amount))
-   setdata(c)
+setdata(c)
+//Premium feature storing
+if(amount>10000)
+{    let res=await fetch(`https://expensetracker-4141b-default-rtdb.firebaseio.com/${authctx.email+"premium"}.json`, {
+  method: "PUT",
+  body:JSON.stringify(true),
+  headers: {
+    "Content-Type": "application/json",
+  },})
+ let response=await res.json()  
+
+}
 }
 a()},[formctx.ShowForm,Edit,Delete])
 
@@ -69,7 +78,7 @@ const closeEditHandler=()=>{
 
 
   return <div>
-    <h1>hi</h1>
+  
    <ul>
     {Data.map((item)=><li><div>{item.category}</div><div>{item.description}</div><div>{item.price}Rs.</div> <div>{item.date}</div> <button onClick={EditHandler.bind(null,item)}>Edit</button><button  onClick={DeleteHandler.bind(null,item.id)}>Delete</button></li>)}
    </ul>

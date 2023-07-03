@@ -28,6 +28,39 @@
   color: #61dafb;
 }
 
+
+.header{
+  position:relative;
+  width:unset;
+  height: 2cm;
+  background-color: black;
+}
+.header h1{
+  position: absolute;
+  margin-left: 0.1cm;
+  align-self: center;
+   color: whitesmoke;
+}
+.overlay {
+  position: fixed;
+  z-index: 10;
+
+}
+.App-light{
+  text-align: center;
+  background-color: #ffffff; /* Set the background color for the light theme */
+  color: #000000; /* Set the text color for the light theme */
+  min-height: 100vh;
+}
+
+
+.App-dark
+{  text-align: center;
+    background-color: #130a0a; /* Set the background color for the dark theme */
+  color: #ffffff; /* Set the text color for the dark theme */
+  min-height: 100vh;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

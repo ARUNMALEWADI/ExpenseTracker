@@ -1,0 +1,107 @@
+.div{
+    position: relative;
+    margin-top: -3.5cm;
+    padding-left: 1cm;
+    padding-right: 1rem;
+    z-index: 10;
+}
+
+
+.switch{
+
+    position: absolute;
+    height: 1cm;
+    color: yellow;
+    border-radius: 5px;
+    border-color: greenyellow;
+    margin-left: 25cm;
+    margin-top: -1.2cm;
+
+   
+    
+}
+
+.div button{
+   
+    height: 1cm;
+    color: yellow;
+    border-radius: 5px;
+    border-color: greenyellow;
+    margin-left: 1cm;
+
+background-color: transparent;
+    
+
+}  
+
+.all{
+    position:relative;
+    display: inline-flex;
+    /* margin: auto; */
+    margin-top: 1cm;
+    padding: auto;
+    align-items: flex-start;
+
+}
+
+
+
+.all div{
+    display: inline-flex;
+    align-items: center;
+    padding: auto;
+    border-radius: 30px;
+    box-shadow: grey 0px 0px 15px;
+    height: 4cm;
+    width: 7cm;
+}
+.all div img{
+    position: absolute;
+    margin-left: 5cm;
+    
+}
+.all div p{
+    font-weight: bold;
+    color: grey;
+    margin-left: 1rem;
+    margin-bottom: 8rem;
+
+}
+.all div h{
+    position:absolute;
+    font-weight: bold;
+    color: rgb(152, 225, 35);
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+
+}
+.all div label{
+    position:absolute;
+    font-weight: bold;
+    margin-top: 3cm;
+    margin-left: 1cm;
+    box-shadow: grey 15px 15px 15px;
+}
+
+.all div button  {
+    position: absolute;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    border-color: white;
+    height: 1cm;
+    width: 3cm;
+    background-color:whitesmoke;
+    cursor: pointer;
+    padding: auto;
+    margin-left: 1cm;
+    
+    box-shadow: grey 15px 15px 15px;
+    
+}
+
+
+.moneyimg{
+    width: 1cm;
+    height: 1cm;
+}

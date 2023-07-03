@@ -33,6 +33,8 @@ try
 }
 catch{
     alert("Signed up sucessfully")
+    localStorage.setItem('token',response.idToken)
+    localStorage.setItem('email',emailref.current.value.replace('.',''))
     dispatch(Authactions.loginHandler({token:response.idToken,email:emailref.current.value.replace('.','')}))
     
     history.replace("/Home")
