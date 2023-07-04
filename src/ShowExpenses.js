@@ -1,9 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { AuthContext } from './Signup/AuthContextProvider'
 import ExpenseForm from './ExpenseForm'
 import { ExpenseFormContext } from './ExpenseFormContext'
 import { useSelector ,useDispatch} from 'react-redux'
 import { Expenseactions } from './Store/Expensereducer'
+import classes from './ShowExpenses.module.css'
+import Modal from './Modal'
 
 const ShowExpenses =  () => {
     const authctx= useSelector(state=>state.auth)
@@ -79,10 +80,30 @@ const closeEditHandler=()=>{
 
   return <div>
   
-   <ul>
+   {/* <ul>
     {Data.map((item)=><li><div>{item.category}</div><div>{item.description}</div><div>{item.price}Rs.</div> <div>{item.date}</div> <button onClick={EditHandler.bind(null,item)}>Edit</button><button  onClick={DeleteHandler.bind(null,item.id)}>Delete</button></li>)}
-   </ul>
-   {Edit &&<ExpenseForm item={editdata} closeEdit={closeEditHandler} isediting={Edit}></ExpenseForm>}
+   </ul> */}
+<div className={classes.div}>
+   <table>
+    <thead>
+      <tr><th>Description</th><th>Amount</th><th>Category</th><th>Date</th><th>Edit/Delete</th></tr>
+    </thead>
+    <tbody>
+  { Data.map((item)=>  <tr className={classes.tr}>
+       <td>{item.description}</td>
+       <td>{item.price}</td>
+       <td>{item.category}</td>
+       <td>{item.date}</td>
+       <td><button onClick={EditHandler.bind(null,item)} className={classes.edit}>Edit</button><button onClick={DeleteHandler.bind(null,item.id)} className={classes.del}>Delete</button></td>
+       </tr>)}
+      </tbody>
+   </table>
+</div>
+   {Edit &&<Modal close={closeEditHandler}>
+   
+ <ExpenseForm item={editdata} closeEdit={closeEditHandler} isediting={Edit}></ExpenseForm>
+ </Modal>
+ }
   </div>
 }
 

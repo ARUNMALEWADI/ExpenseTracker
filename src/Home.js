@@ -9,8 +9,8 @@ import { useSelector ,useDispatch} from 'react-redux'
 import { Authactions } from './Store/Authreducer'
 import { ThemeAction } from './Store/Themereducer'
 import Premium from './Premium'
-import Csv from './Csv'
-import { CSVLink, CSVDownload } from "react-csv";
+import { CSVLink,  } from "react-csv";
+import Modal from './Modal'
 const Home = () => {
    const authctx= useSelector(state=>state.auth)
    const expensectx=useSelector(state=>state.expense.amount)
@@ -38,6 +38,12 @@ alert(response.error.message)
     formctx.OpenFormHandler();
    
   }
+  const CloseformHandler=()=>{
+    formctx.CloseFormHandler();
+   
+  }
+
+
   const LogoutHandler=()=>{
  dispatch(Authactions.logoutHandler())
  alert("Logged out sucessfully")
@@ -53,8 +59,8 @@ const label=".";
   return <Fragment>
      <div className={classes.div}>
      <Link to="/Userprofile"> <button className={classes.profile}>Complete Profile</button></Link>
-      <button onClick={EmailverificationHandler}>Verify Email</button>
-     <Link to="/Login" > <button onClick={LogoutHandler} style={{  height:'1cm',backgroundColor:"transparent", color: 'red',borderradius: '5px',bordercolor: 'red'}}>Logout</button></Link>
+      <button onClick={EmailverificationHandler} className={classes.vmail}>Verify Email</button>
+      <Link to="/Login" > <button onClick={LogoutHandler} className={classes.logout} >Logout</button></Link> 
     
   { premium &&<div className={classes.switch}>
      <div className="container">
@@ -90,8 +96,8 @@ const label=".";
       <div>
       <img  className={classes.moneyimg} src={require("./assets/premium.jpg")} alt={"Carlie Anglemire"}/>
       <p>Pro Membership</p>
-     { premium&&<h>Activated</h>}
-      {!premium&&<h>{10000-expensectx} needs to go</h>}
+     { premium&&<h3> Active</h3>}
+      {!premium&&<h3>{10000-expensectx} needs to go</h3>}
       </div>
        
       <div>
@@ -113,7 +119,12 @@ const label=".";
      <Premium></Premium>
     
 
-    { formctx.ShowForm&& <ExpenseForm></ExpenseForm>}
+    { formctx.ShowForm&& <Modal close={CloseformHandler}>
+      <ExpenseForm></ExpenseForm>
+        </Modal>
+    
+    
+   }
       <ShowExpenses></ShowExpenses>
     
       

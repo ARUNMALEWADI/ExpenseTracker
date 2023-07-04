@@ -1,7 +1,7 @@
 import React, { useContext,  useRef} from 'react'
-import { AuthContext } from './Signup/AuthContextProvider'
 import { ExpenseFormContext } from './ExpenseFormContext'
 import { useSelector } from 'react-redux'
+import classes from "./ExpenseForm.module.css"
 
 const ExpenseForm = (props) => {
     const authctx=useSelector(state=>state.auth)
@@ -81,22 +81,22 @@ else{
 
      formctx.CloseFormHandler()
     }
-  return <div>
+  return <div className={classes.div}>
     <form onSubmit={SubmitHandler}>
       <h1>{props.isediting?"Edit Expense":"AddExpense"}</h1>
         <label>Expense Price</label>
-        <input type='number' id='price' ref={expenseref} defaultValue={price} ></input>
+        <input type='number' id='price' ref={expenseref} defaultValue={price} required></input>
         <label>Description</label>
-        <input type='text' id='description' ref={descref}   defaultValue={description}></input>
+        <input type='text' id='description' ref={descref}   defaultValue={description} required></input>
         <label>Expense Category </label>
-        <select ref={categoryref} defaultValue={category}>
+        <select ref={categoryref} defaultValue={category} required>
            <option>Food</option> 
            <option>Petrol</option> 
            <option>Entertainment</option>
            <option>Travel</option> 
         </select>
         <label>Date</label>
-        <input type='date' ref={dateref} defaultValue={date}></input>
+        <input type='date' ref={dateref} defaultValue={date} required></input>
         <button type='submit'>{props.isediting?"Edit Expense":"AddExpense"}</button>
     </form>
     

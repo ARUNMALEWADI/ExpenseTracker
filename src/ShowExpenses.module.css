@@ -1,0 +1,72 @@
+.div{
+    position: relative;
+    margin-top: 2cm;
+    margin-bottom: 0.5cm;
+    display: inline-flex;
+
+    border-radius: 30px;
+    box-shadow: grey 0px 0px 15px;
+    padding: 0.5cm;
+ padding-top: 0.5cm;
+    
+}
+
+.tr {
+    color: inherit;
+    display: table-row;
+    vertical-align: middle;
+    align-items: center;
+    outline: 0px;
+   
+  
+}
+.div th{
+    padding: auto;;
+    padding-right: 3cm;
+    padding-bottom: 0.5cm;
+    align-items: center;
+    padding-left: 1cm;
+    border-bottom: 1px solid rgb(224, 224, 224);
+
+}
+.div td{
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    display: table-cell;
+    vertical-align: inherit;
+    border-bottom: 1px solid rgb(224, 224, 224);
+    text-align: left;
+    padding: 16px;
+    padding-left: 1cm;
+   
+
+}
+
+.edit{
+        margin-top: -2cm; 
+        width: 2.5cm;
+        height: 1cm;
+        font-weight: bold;
+        background-color: transparent;
+         color:greenyellow; 
+         margin-right: 1rem;
+        border-color:whitesmoke;
+      
+        cursor: pointer;
+    
+}
+.del{
+    margin-top: -2cm; 
+    width: 2.5cm;
+    height: 1cm;
+    font-weight: bold;
+    background-color: transparent;
+     color: rgb(255, 25, 0); 
+     border-color:whitesmoke; 
+    cursor: pointer;
+
+}
+ 

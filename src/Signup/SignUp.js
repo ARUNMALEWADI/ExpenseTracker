@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import { Authactions } from '../Store/Authreducer';
 import { useDispatch } from 'react-redux';
+import classes from './SignUp.module.css'
 
 const SignUp = () => {
     const history=useHistory()
@@ -42,7 +43,7 @@ catch{
    }
     }
     
-    return <div>
+    return <div className={classes.div}>
         <h1>SignUp</h1>
         {<form onSubmit={Signuphandler}> 
             <label>Email:</label>
@@ -54,7 +55,7 @@ catch{
             <button type='submit'>Signup</button>
         </form>}
 
-        {<button >Have an account?<Link to="/Login">Login</Link></button>}
+        {<p >Have an account?<Link to="/Login">Login</Link></p>}
     </div>
 
 }

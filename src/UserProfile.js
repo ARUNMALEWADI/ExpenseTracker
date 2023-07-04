@@ -1,25 +1,56 @@
-import React, { useContext, useRef, useState } from 'react'
-import { AuthContext } from './Signup/AuthContextProvider';
+import React, { useContext, useRef, useState } from 'react';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
+import { useSelector } from 'react-redux';
 
 const UserProfile = () => {
   const [toggle,settoggle]=useState(false)
+  const [name,setname]=useState('')
+  const[purl,seturl]=useState('');
     const profname=useRef();
     const ppurl=useRef();
-const ctx=useContext(AuthContext)
+const token=useSelector(state=>state.auth.token)
+
+
+const GetprofileHandler=async()=>{
+const res= await fetch(
+  "https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyAV9y6epL8g9M5iqxQu2vM5tDZHxol-1k0",
+  {
+    method: "POST",
+    body: JSON.stringify({
+      idToken:token,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  }
+);
+const response=await res.json()
+console.log(response);
+try{
+alert(response.error.message)
+}
+catch{
+  const user=response.users[0]
+  setname(user.displayName);
+  seturl(user.photoUrl);
+
+}
+}
+GetprofileHandler();
+
     const SubmitHandler= async(e)=>{
      e.preventDefault()
-     const userprofiledata={
-        displayName:profname.current.value,
-        photoUrl:ppurl.current.value,
-        deleteAttribute: "DISPLAY_NAME",
-        idToken:ctx.token,
-        returnSecureToken:true
-     }
-     const res= await fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAV9y6epL8g9M5iqxQu2vM5tDZHxol-1k0',{method:"POST",body:JSON.stringify(userprofiledata),headers:{"Content-Type":"application/json"}})
-const response=await res.json();
-settoggle(!toggle)
-    }
+     const res= await fetch("https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAV9y6epL8g9M5iqxQu2vM5tDZHxol-1k0",{method:"POST", body:JSON.stringify({ idToken:token,displayName:profname.current.value,photoUrl:ppurl.current.value,returnSecureToken:true}), headers:{"Content-Type":"application/json"}})
+      const response=await res.json()
+     try{
+  alert(response.error.message)
+   }
+   catch{
+   alert("Userprofile updated sucessfully")
+   settoggle(!toggle)
+   }
+  }
+
     const toggleHandler=()=>{
       settoggle(!toggle)
     }
@@ -27,9 +58,9 @@ settoggle(!toggle)
     <h1>Contact Details</h1>
           <form onSubmit={SubmitHandler}>
             <label>Profile Name</label>
-            <input type='text' ref={profname}></input>
+            <input type='text' ref={profname} defaultValue={name}></input>
             <label>Profile Photo URL</label>
-            <input type='url' ref={ppurl}></input>
+            <input type='url' ref={ppurl} defaultValue={purl}></input>
             <button type='submit'>Update</button>
             <button type='button' onClick={toggleHandler}>Cancel</button>
           </form>

@@ -1,8 +1,9 @@
 .div{
-    position: relative;
+    /* position: relative; */
     margin-top: -3.5cm;
     padding-left: 1cm;
-    padding-right: 1rem;
+    padding-right: 1cm;
+    
     z-index: 10;
 }
 
@@ -14,31 +15,69 @@
     color: yellow;
     border-radius: 5px;
     border-color: greenyellow;
-    margin-left: 25cm;
-    margin-top: -1.2cm;
-
-   
-    
+    margin-left: 28cm;
+    margin-top: 1.7cm;
+        
 }
 
-.div button{
-   
+.profile{
+    width: 4cm;
     height: 1cm;
-    color: yellow;
+    color:greenyellow;
     border-radius: 5px;
-    border-color: greenyellow;
-    margin-left: 1cm;
-
-background-color: transparent;
+    border-color: greenyellow; 
+    background-color: transparent;
+    align-items: center;
+margin-top:2cm;
+position: absolute;
+display: inline-flex;
+margin-left:-5cm;
     
 
 }  
+.vmail{
+    width: 4cm;
+    height: 1cm;
+    color:white;
+    border-radius: 5px;
+    border-color: white;
+    align-items: center;
+    padding-left: 1cm;
+    margin-top:2cm;
+background-color: transparent; 
+position: absolute;
+display: inline-flex;
+margin-left: 0.5cm;
+    
+
+}  
+
+.logout
+{
+    width: 3cm;
+    height: 1cm;
+    color: red;
+    border-radius: 5px;
+    border-color: red;
+    margin-top:2cm;
+align-items: center;
+padding-left: 1cm;
+background-color: transparent; 
+position: absolute;
+display: inline-flex;
+margin-left: 5.5cm;
+}
+
+
+
+
 
 .all{
     position:relative;
     display: inline-flex;
     /* margin: auto; */
-    margin-top: 1cm;
+    margin-left: 0.2cm;
+    margin-top: 5cm;
     padding: auto;
     align-items: flex-start;
 
@@ -50,6 +89,7 @@ background-color: transparent;
     display: inline-flex;
     align-items: center;
     padding: auto;
+    margin-right: 0.8cm;
     border-radius: 30px;
     box-shadow: grey 0px 0px 15px;
     height: 4cm;
@@ -67,13 +107,14 @@ background-color: transparent;
     margin-bottom: 8rem;
 
 }
-.all div h{
+.all div h3{
     position:absolute;
     font-weight: bold;
     color: rgb(152, 225, 35);
-    margin-left: 1rem;
-    margin-bottom: 1rem;
-
+    margin-left: 1cm;
+    margin-bottom: -2rem;
+    background-color: transparent;
+    /* box-shadow: grey 15px 15px 15px; */
 }
 .all div label{
     position:absolute;

@@ -1,0 +1,77 @@
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+  
+  .overlay {
+    position: fixed;
+    z-index: 11;
+  
+  }
+  .form{
+     position: relative; 
+    display: grid;
+    align-items: start;
+    align-content: space-between;
+    margin-left: 12cm;
+    border:2px solid white;
+    
+    height: 15cm;
+    width: 10cm;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: white 0px 0px 50px;
+
+  }
+  .form input{
+    position: relative;
+    margin-bottom: 0.3cm;
+    width: 7cm;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 1rem;
+    margin-right: 4rem;
+    margin-left: 2rem;
+    
+}
+.form select{
+    position: relative;
+  width: 8cm;
+ font-size: large;
+  font-weight: bolder;
+  padding: 1rem;
+  margin-right: 4rem;
+  margin-left: 2rem;
+}
+.form label{
+    position: relative;
+   margin-bottom: 1cm;
+    font-size: larger;
+    font-weight: bolder;
+    margin-right: 4rem;
+    margin-left: 2rem;
+}
+
+.form h1{
+  position: relative;
+ margin-bottom: 1cm;
+  font-size: xx-large;
+  font-weight: bolder;
+  margin-right: 4rem;
+  margin-left: 2cm;
+}
+
+.form button{
+    margin-top: 1cm;
+    margin-left: 2.5cm;
+    width: 4cm;
+    height: 1.5cm;
+    font-weight: bold;
+    background-color: red;
+}

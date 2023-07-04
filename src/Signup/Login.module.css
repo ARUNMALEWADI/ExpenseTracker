@@ -1,12 +1,12 @@
 .div{
 
-
+margin-top: 1cm;
 margin-left: 12cm;
 border-radius: 30px;
 border:5px solid whitesmoke;
 box-shadow: lightblue(2,4,3,6);
 background-color: rgba(83, 145, 207, 0.267);
-height: 15cm;
+height: 11cm;
 width: 10cm;
 }
 div input{
@@ -23,8 +23,9 @@ div label{
     font-weight: bolder;
 }
 div button{
-    margin-top: 2cm;
-    width: 4cm;
+    margin-top: 1cm;
+    width: 2cm;
+    border-radius: 30px;
     height: 1.5cm;
     font-weight: bold;
 }

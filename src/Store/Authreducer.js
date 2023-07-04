@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit'
 const AuthSlice=createSlice({
     name:"Authentication",
-    initialState:{token:localStorage.getItem('token'),email:localStorage.getItem('email'),Isloggedin:false},
+    initialState:{token:localStorage.getItem('token'),email:localStorage.getItem('email'),Isloggedin:localStorage.getItem('token')!=null},
     reducers:{
          loginHandler(state,action){
 
