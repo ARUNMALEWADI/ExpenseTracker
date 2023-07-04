@@ -34,12 +34,17 @@
   width:unset;
   height: 2cm;
   background-color: black;
+  border: 2px solid grey;
+  border-bottom-color: grey;
+  box-shadow: grey 0px 0px 15px ;
+  align-items: center;
 }
 .header h1{
   position: absolute;
   margin-left: 0.1cm;
   align-self: center;
    color: whitesmoke;
+
 }
 .overlay {
   position: fixed;

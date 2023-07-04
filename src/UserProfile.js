@@ -1,4 +1,4 @@
-import React, { useContext, useRef, useState } from 'react';
+import React, {useRef, useState } from 'react';
 import { Redirect } from 'react-router-dom/cjs/react-router-dom.min';
 import { useSelector } from 'react-redux';
 
@@ -56,12 +56,12 @@ GetprofileHandler();
     }
   return <div>
     <h1>Contact Details</h1>
-          <form onSubmit={SubmitHandler}>
-            <label>Profile Name</label>
+          <form onSubmit={SubmitHandler} >
+            <label style={{position:"relative",marginRight:"0.5cm"}}>Profile Name</label>
             <input type='text' ref={profname} defaultValue={name}></input>
-            <label>Profile Photo URL</label>
+            <label style={{position:"relative",marginRight:"0.5cm",marginLeft:"1cm"}}>Profile Photo URL</label>
             <input type='url' ref={ppurl} defaultValue={purl}></input>
-            <button type='submit'>Update</button>
+            <button type='submit' style={{position:"relative",marginRight:"5cm",color:"orangered"}}>Update</button>
             <button type='button' onClick={toggleHandler}>Cancel</button>
           </form>
           {toggle&&<Redirect to="/Home"></Redirect>}
