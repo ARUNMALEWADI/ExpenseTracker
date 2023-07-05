@@ -97,7 +97,7 @@ const label="switch";
       <img  className={classes.moneyimg} src={require("./assets/premium.jpg")} alt={"Carlie Anglemire"}/>
       <p>Pro Membership</p>
      { premium&&<h3>Dark Mode Available</h3>}
-      {!premium&&<h3>{10000-expensectx} needs to go</h3>}
+      {!premium&&<h3>{10000-expensectx}Rs. to go</h3>}
       </div>
        
       <div>
