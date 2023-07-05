@@ -54,7 +54,7 @@ const ThemeHandler=()=>{
   dispatch(ThemeAction.TogglethemeHandler())
 }
 
-const label=".";
+const label="switch";
 
   return <Fragment>
      <div className={classes.div}>
@@ -64,7 +64,7 @@ const label=".";
     
   { premium &&<div className={classes.switch}>
      <div className="container">
-      {label}{" "}
+      {}{" "}
       <div className="toggle-switch">
         <input  type="checkbox" className="checkbox" 
                name="label" id={label} />
@@ -96,7 +96,7 @@ const label=".";
       <div>
       <img  className={classes.moneyimg} src={require("./assets/premium.jpg")} alt={"Carlie Anglemire"}/>
       <p>Pro Membership</p>
-     { premium&&<h3> Active</h3>}
+     { premium&&<h3>Dark Mode Available</h3>}
       {!premium&&<h3>{10000-expensectx} needs to go</h3>}
       </div>
        
@@ -104,7 +104,7 @@ const label=".";
       <img  className={classes.moneyimg} src={require("./assets/csv.jpg")} alt={"Carlie Anglemire"}/>
       <p>Download Data</p>
         <CSVLink data={expense}  filename={"expenses.csv"}>
-          <button style={{position:"relative",marginLeft:"-2.8cm"}}>
+         <button style={{position:"relative",marginLeft:"-2.8cm"}} >
             <section style={{position:"absolute",marginLeft:"-5cm" ,height:"fit-content",marginTop:"-1cm"}}>
               <img className={classes.moneyimg} src={require("./assets/downloads.png")} alt={"Carlie Anglemire"}/>
             </section >

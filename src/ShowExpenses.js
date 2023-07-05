@@ -54,7 +54,7 @@ dispatch(Expenseactions.expenseadd(c))
 dispatch(Expenseactions.expenseamount(amount))
 setdata(c)
 //Premium feature storing
-if(amount>10000)
+if(amount>=10000)
 {    let res=await fetch(`https://expensetracker-4141b-default-rtdb.firebaseio.com/${authctx.email+"premium"}.json`, {
   method: "PUT",
   body:JSON.stringify(true),
