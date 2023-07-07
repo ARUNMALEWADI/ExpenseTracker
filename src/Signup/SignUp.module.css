@@ -31,5 +31,6 @@ margin-top: 1cm;
         background-color: green;
         height: 1cm;
         font-weight: bold;
+        cursor: pointer;
     }
     

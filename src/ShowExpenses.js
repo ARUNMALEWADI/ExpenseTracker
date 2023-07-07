@@ -83,8 +83,10 @@ const closeEditHandler=()=>{
    {/* <ul>
     {Data.map((item)=><li><div>{item.category}</div><div>{item.description}</div><div>{item.price}Rs.</div> <div>{item.date}</div> <button onClick={EditHandler.bind(null,item)}>Edit</button><button  onClick={DeleteHandler.bind(null,item.id)}>Delete</button></li>)}
    </ul> */}
+
 <div className={classes.div}>
-   <table>
+  {Data.length===0&& <h1>No Expenses to Show....add some</h1>}
+ { Data.length!=0&& <table>
     <thead>
       <tr><th>Description</th><th>Amount</th><th>Category</th><th>Date</th><th>Edit/Delete</th></tr>
     </thead>
@@ -97,7 +99,7 @@ const closeEditHandler=()=>{
        <td><button onClick={EditHandler.bind(null,item)} className={classes.edit}>Edit</button><button onClick={DeleteHandler.bind(null,item.id)} className={classes.del}>Delete</button></td>
        </tr>)}
       </tbody>
-   </table>
+   </table>}
 </div>
    {Edit &&<Modal close={closeEditHandler}>
    
